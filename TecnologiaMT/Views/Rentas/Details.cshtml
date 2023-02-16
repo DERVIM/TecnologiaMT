@@ -1,0 +1,66 @@
+﻿@model TecnologiaMT.Models.Renta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Renta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cod_Renta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cod_Renta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_Renta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_Renta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Final)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.Cod_Emp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Cod_Emp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Cod_Cli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Cod_Cli)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

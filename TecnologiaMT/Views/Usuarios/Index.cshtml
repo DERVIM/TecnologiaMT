@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityUser>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="col-11 mx-auto pt-0">
+
+    <div class="card-header py-3 bg-primary">
+        <h6 class="m-0 font-weight-bold text-white">Usuarios</h6>
+    </div>
+    <br />
+    <div class="card-header bg-gradient-light">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>usuarios por rol</th>
+                <th>rol</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.UserName</th>
+                    <th>@item.Roles.Count</th>
+                   
+                <td>
+                    <a href="@Url.Action("ResetPassword", "Account",new { id = item.Id })" class="btn btn-warning"><i class="fa fa-pencil-alt"></i></a>
+                    <a href="@Url.Action("Delete","Usuarios",new { id = item.Id })" class="btn btn-danger"><i class="fa fa-trash-alt"></i> </a>
+                </td>
+                </tr>
+            }
+        </table>
+
+        <div class="card-body">
+
+            <div class=" btn-sm float-left">
+                <a href="@Url.Action("Register","Account" )" class="btn btn-success " style="float:left">Registrar Usuario </a>
+            </div>
+            <div class=" btn-sm float-left">
+                <a href=" @Url.Action("RegisterRole", "Account")" class="btn btn-success"><i class="fa fa-pencil-alt"></i>Asignar Rol a un Usuario</a>
+            </div>
+            <div class=" btn-sm float-left">
+                <a href="@Url.Action("Index","Rol" )" class="btn btn-warning " style="float:left">Cancelar </a>
+            </div>
+            <br />
+        </div>
+        <br />
+    </div>
+   
+</div>
+

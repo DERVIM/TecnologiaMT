@@ -1,0 +1,228 @@
+﻿@model IEnumerable<TecnologiaMT.Models.Producto>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-primary">
+        <h6 class="m-0 font-weight-bold text-white">Lista de Productos</h6>
+    </div>
+    <div class="card-body">
+        @*<div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-success btn-sm" type="button">@Html.ActionLink("Nuevo ", "Create")</button>
+            </div>
+        </div>*@
+        <div class="row m-1">
+            <a href="@Url.Action("Create","Productoes" )" class="btn btn-success " style="float:left"><i class="fa fa-book-open"></i> Nuevo Producto </a>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+
+                    <table class="table table-bordered" id="datTable" style="width:100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h6>Codigo</h6>
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nombre)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Modelo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Num_Serie)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Stock)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PrecioCompra)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PrecioVenta)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Pre_UniRenta)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Descripcion)
+                                </th>
+                                <th>
+                                    @*@Html.DisplayNameFor(model => model.Marca.Cod_Marca)*@
+                                    <h6>Marcas</h6>
+                                </th>
+                                <th>
+                                    @*@Html.DisplayNameFor(model => model.Categoria.Cod_Categoria)*@
+                                    <h6>Categorias</h6>
+                                </th>
+                                <th>
+                                    @*@Html.DisplayNameFor(model => model.Estado_Producto.Cod_EsPro)*@
+                                    <h6>Estado</h6>
+                                </th>
+                                <th>Accion</th>
+                            </tr>
+
+                        </thead>
+                        <tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cod_Prod)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nombre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Modelo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Num_Serie)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Stock)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PrecioCompra)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PrecioVenta)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Pre_UniRenta)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Descripcion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Marca.Nombre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Categoria.Nombre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estado_Producto.Nombre)
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("Edit","Productoes",new { id = item.Id })" class="btn btn-warning"><i class="fa fa-pencil-alt"></i></a>
+                                        <a href="@Url.Action("Delete","Productoes",new { id = item.Id })" class="btn btn-danger"><i class="fa fa-trash-alt"></i> </a>
+
+                                        @*<button class="btn btn-warning"><i class="fa fa-pencil"></i>@Html.ActionLink("Editar", "Edit", new { id = item.Id })</button>
+                                        <button class="btn btn-danger"><i class=""></i>@Html.ActionLink("Elimina", "Delete", new { id = item.Id })</button>*@
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        </tfoot>
+
+                    </table>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cod_Prod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Num_Serie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pre_UniRenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca.Cod_Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria.Cod_Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado_Producto.Cod_EsPro)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cod_Prod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Num_Serie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pre_UniRenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca.Cod_Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.Cod_Categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado_Producto.Cod_EsPro)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+
+    </table>*@

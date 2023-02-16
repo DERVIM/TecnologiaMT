@@ -1,0 +1,38 @@
+﻿@model IEnumerable < TecnologiaMT.Models.Proveedor>
+    @{
+        ViewBag.Title = "Proveedor";
+    }
+
+<h2>Proveedor</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Codigo
+        </th>
+        <th>
+            Nombres
+        </th>
+        <th>
+           Apellidos
+        </th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>
+                @p.Cod_Proveedor
+            </td>
+            <td>
+                @p.Nombres
+            </td>
+             
+            <td>
+                @p.Apellidos
+            </td>
+        </tr>
+    }
+
+</table>
+

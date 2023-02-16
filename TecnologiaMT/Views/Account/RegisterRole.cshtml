@@ -1,0 +1,49 @@
+﻿@model TecnologiaMT.Models.RegisterViewModel
+
+@{ ViewBag.Title = "RegisterRole"; }
+
+
+
+<div class="col-11 mx-auto pt-0">
+    <div class="card">
+        <div class="card-header py-3 bg-primary">
+            <h6 class="m-0 font-weight-bold text-white">Asignar Rol a Usuarios</h6>
+        </div>
+        @using (Html.BeginForm("RegisterRole", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+             @Html.AntiForgeryToken()
+                <hr />
+                                <div class="card-body bg-gradient-light">
+                                    <div class="row col-md-12">
+
+                                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                @Html.Label("Seleccionar Usuario", new { @class = "col-md-2 control-label" })
+
+                                                @Html.DropDownList("UserName")
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                @Html.Label("Seleccionar Role", new { @class = "col-md-2 control-label" })
+
+                                                @Html.DropDownList("Name")
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group m-4">
+                                            <div class=" btn-sm float-left">
+                                                <input type="submit" class="btn btn-success" value="Assignar Role" />
+                                            </div>
+                                            <div class=" btn-sm float-left">
+                                                <a href="@Url.Action("Index","Usuarios" )" class="btn btn-warning " style="float:left">Cancelar </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                                <hr />
+          }
+    </div>
+</div>

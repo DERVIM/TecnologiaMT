@@ -1,0 +1,61 @@
+﻿@model TecnologiaMT.Models.Estado_Producto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card shadow mb-5">
+        <div class="form-horizontal">
+            <div class="card-header py-3 bg-primary">
+                <h6 class="m-0 font-weight-bold text-white">Modificar Estado Producto</h6>
+            </div>
+            <hr />
+            <div class="card-body">
+                <div class="row">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <h6>Codigo</h6>
+                            <a> <strong> @Html.DisplayFor(model => model.Cod_EsPro, new { htmlAttributes = new { @class = "form-control" } }) </strong></a>
+                            @Html.HiddenFor(model => model.Cod_EsPro, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cod_EsPro, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <h6>Nombre</h6>
+                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <h6>Observacion</h6>
+                            @Html.EditorFor(model => model.Observacion, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Observacion, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group m-4">
+                            <div class=" btn-sm float-left">
+                                <input type="submit" value="Guardar" class="btn btn-success" />
+                            </div>
+                            <div class=" btn-sm float-left">
+                                <a href="@Url.Action("Index","Estado_Producto" )" class="btn btn-warning " style="float:left">Cancelar </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><hr />
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

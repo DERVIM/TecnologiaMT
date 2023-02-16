@@ -1,0 +1,92 @@
+﻿@model TecnologiaMT.Models.Proveedor
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="col-11 mx-auto ">
+    <div class="card">
+        <div class="card-header py-3 bg-primary">
+            <h6 class="m-0 font-weight-bold text-white">Nuevo Proveedor </h6>
+        </div>
+        <hr />
+        <div class="card-body">
+            <div class="row">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h6>Codigo</h6>
+                        @Html.EditorFor(model => model.Cod_Proveedor, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Cod_Proveedor, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h6>Identificacion</h6>
+                        @Html.EditorFor(model => model.Identificacion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Identificacion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+
+                        <h6>Nombres</h6>
+                        @Html.EditorFor(model => model.Nombres, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Nombres, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+
+                        <h6>Apellidos</h6>
+                        @Html.EditorFor(model => model.Apellidos, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Apellidos, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+
+                        <h6>Telefono</h6>
+                        @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h6>Correo</h6>
+                        @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h6>RazonSocial</h6>
+                        @Html.DropDownList("RazonSocialId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.RazonSocialId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group m-4">
+                    <div class=" btn-sm float-left">
+                        <input type="submit" value="Agregar" class="btn btn-success" />
+                    </div>
+                    <div class=" btn-sm float-left">
+                        <a href="@Url.Action("Index","Proveedors" )" class="btn btn-warning " style="float:left">Cancelar </a>
+                    </div>
+                </div>
+
+            </div>
+            <hr />
+        </div>
+
+    </div>
+</div>
+         }
+
+
+
+         @section Scripts {
+             @Scripts.Render("~/bundles/jqueryval")
+         }

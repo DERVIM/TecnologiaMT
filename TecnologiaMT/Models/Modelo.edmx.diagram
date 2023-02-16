@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="817a960be88f46f58154ad33c8645bba" Name="Diagram1" ZoomLevel="82" >
+        <EntityTypeShape EntityType="Modelo.Producto" Width="1.75" PointX="8" PointY="12.25" />
+        <EntityTypeShape EntityType="Modelo.Categoria" Width="1.75" PointX="8" PointY="17.75" />
+        <EntityTypeShape EntityType="Modelo.Marca" Width="1.625" PointX="5" PointY="14.875" />
+        <EntityTypeShape EntityType="Modelo.venta" Width="1.75" PointX="16" PointY="5.375" />
+        <EntityTypeShape EntityType="Modelo.EstadoFactura" Width="1.5" PointX="16.125" PointY="10.25" />
+        <EntityTypeShape EntityType="Modelo.DetalleVenta" Width="2.125" PointX="10.375" PointY="8.875" />
+        <EntityTypeShape EntityType="Modelo.Compra" Width="1.75" PointX="4.75" PointY="2" />
+        <EntityTypeShape EntityType="Modelo.DetalleCompra" Width="2" PointX="8" PointY="2.125" />
+        <EntityTypeShape EntityType="Modelo.Proveedor" Width="1.875" PointX="7.125" PointY="5.125" />
+        <EntityTypeShape EntityType="Modelo.RazonSocial" Width="2" PointX="11.25" PointY="1" />
+        <EntityTypeShape EntityType="Modelo.Empleado" Width="2" PointX="14.625" PointY="1.5" />
+        <EntityTypeShape EntityType="Modelo.Cliente" Width="1.75" PointX="17.625" PointY="0.625" />
+        <EntityTypeShape EntityType="Modelo.Renta" Width="1.875" PointX="18.375" PointY="12.375" />
+        <EntityTypeShape EntityType="Modelo.DetalleRenta" Width="2.125" PointX="18.375" PointY="16.625" />
+        <EntityTypeShape EntityType="Modelo.AsistenciaTecnica" Width="2.125" PointX="15.625" PointY="13.125" />
+        <EntityTypeShape EntityType="Modelo.DetallaAsistenciaTecnica" Width="2.5" PointX="12" PointY="13.875" />
+        <EntityTypeShape EntityType="Modelo.Retencion" Width="2" PointX="7.25" PointY="9.125" />
+        <EntityTypeShape EntityType="Modelo.TipoPago" Width="1.875" PointX="12.875" PointY="10" />
+        <AssociationConnector Association="Modelo.MarcaProducto" />
+        <AssociationConnector Association="Modelo.CategoriaProducto" />
+        <AssociationConnector Association="Modelo.CompraDetalleCompra" />
+        <AssociationConnector Association="Modelo.RentaDetalleRenta" />
+        <AssociationConnector Association="Modelo.ProductoDetalleCompra" />
+        <AssociationConnector Association="Modelo.AsistenciaTecnicaDetallaAsistenciaTecnica" />
+        <AssociationConnector Association="Modelo.RazonSocialProveedor" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="Modelo.RazonSocialCliente" />
+        <AssociationConnector Association="Modelo.EmpleadoCompra" />
+        <AssociationConnector Association="Modelo.EmpleadoRenta" />
+        <AssociationConnector Association="Modelo.EmpleadoAsistenciaTecnica" />
+        <AssociationConnector Association="Modelo.ProveedorCompra" />
+        <AssociationConnector Association="Modelo.RetencionCompra" />
+        <AssociationConnector Association="Modelo.ClienteRenta" />
+        <AssociationConnector Association="Modelo.ClienteAsistenciaTecnica" />
+        <EntityTypeShape EntityType="Modelo.TipoFactura" Width="1.5" PointX="13.75" PointY="6.875" />
+        <AssociationConnector Association="Modelo.TipoPagoCompra" />
+        <AssociationConnector Association="Modelo.TipoPagoAsistenciaTecnica" />
+        <EntityTypeShape EntityType="Modelo.Cuota" Width="1.625" PointX="21.25" PointY="11.125" />
+        <EntityTypeShape EntityType="Modelo.Estado_Producto" Width="1.75" PointX="5.125" PointY="12.375" />
+        <AssociationConnector Association="Modelo.Estado_ProductoProducto" />
+        <AssociationConnector Association="Modelo.ProductoDetalleRenta" />
+        <AssociationConnector Association="Modelo.ProductoDetallaAsistenciaTecnica" />
+        <AssociationConnector Association="Modelo.TipoPagoCuota" />
+        <EntityTypeShape EntityType="Modelo.DetalleCuota" Width="1.625" PointX="21" PointY="14.5" />
+        <AssociationConnector Association="Modelo.CuotaDetalleCuota" />
+        <AssociationConnector Association="Modelo.RentaCuota" />
+        <EntityTypeShape EntityType="Modelo.Descuento" Width="1.5" PointX="10.5" PointY="4.75" />
+        <AssociationConnector Association="Modelo.ventaDetalleVenta" />
+        <AssociationConnector Association="Modelo.Empleadoventa" />
+        <AssociationConnector Association="Modelo.TipoFacturaventa" />
+        <AssociationConnector Association="Modelo.EstadoFacturaventa" />
+        <AssociationConnector Association="Modelo.Clienteventa" />
+        <AssociationConnector Association="Modelo.ProductoDetalleVenta" />
+        <AssociationConnector Association="Modelo.Retencionventa" />
+        <AssociationConnector Association="Modelo.TipoPagoventa" />
+        <AssociationConnector Association="Modelo.DescuentoDetalleVenta" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

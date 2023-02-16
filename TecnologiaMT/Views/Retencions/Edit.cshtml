@@ -1,0 +1,62 @@
+﻿@model TecnologiaMT.Models.Retencion
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="card shadow mb-5">
+    <div class="form-horizontal">
+        <div class="card-header py-3 bg-primary">
+            <h6 class="m-0 font-weight-bold text-white">Modificar Retencion</h6>
+        </div>
+        <hr />
+        <div class="card-body">
+            <div class="row">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <h6>Codigo</h6>
+                        <a> <strong> @Html.DisplayFor(model => model.Cod_Reten, new { htmlAttributes = new { @class = "form-control" } }) </strong></a>
+                        @Html.HiddenFor(model => model.Cod_Reten, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Cod_Reten, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+
+                        <h6>Nombre</h6>
+                        @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+
+                        <h6>Porcentaje</h6>
+                        @Html.EditorFor(model => model.Porcentaje, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Porcentaje, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group m-4">
+                        <div class=" btn-sm float-right">
+                            <input type="submit" value="Guardar" class="btn btn-success" />
+                            <button class="btn btn-warning"> @Html.ActionLink("Cancelar", "Index")</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div><hr />
+    </div>
+</div>
+    }
+
+  
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

@@ -1,0 +1,116 @@
+﻿@model IEnumerable<TecnologiaMT.Models.Retencion>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-primary">
+        <h6 class="m-0 font-weight-bold text-white">Lista de Retenciones</h6>
+    </div>
+    <div class="card-body">
+        @*<div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-success btn-sm" type="button">@Html.ActionLink("Nuevo Retencion", "Create")</button>
+            </div>
+        </div>*@
+        <div class="row m-1">
+            <a href="@Url.Action("Create","Retencions" )" class="btn btn-success " style="float:left"><i class="fa fa-book-open"></i> Nuevo Retencion </a>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+
+                    <table class="table table-bordered" id="datTable" style="width:100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h6>Codigo</h6>
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nombre)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Porcentaje)
+                                </th>
+                                <th>Accion</th>
+                            </tr>
+
+
+                        </thead>
+                        <tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cod_Reten)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nombre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Porcentaje)
+                                    </td>
+                                    <td>
+
+                                        @*<button class="btn btn-warning"><i class="fa fa-pencil"></i>@Html.ActionLink("Editar", "Edit", new { id = item.Id })</button>
+                                        <button class="btn btn-danger"><i class=""></i>@Html.ActionLink("Elimina", "Delete", new { id = item.Id })</button>*@
+                                        <a href="@Url.Action("Edit","Retencions",new { id = item.Id })" class="btn btn-warning"><i class="fa fa-pencil-alt"></i></a>
+                                        <a href="@Url.Action("Delete","Retencions",new { id = item.Id })" class="btn btn-danger"><i class="fa fa-trash-alt"></i> </a>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        </tfoot>
+
+                    </table>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cod_Reten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Porcentaje)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cod_Reten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Porcentaje)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+
+    </table>*@

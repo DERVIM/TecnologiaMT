@@ -1,0 +1,109 @@
+﻿@model IEnumerable<TecnologiaMT.Models.Empleado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-primary">
+        <h6 class="m-0 font-weight-bold text-white">Lista de Empleado</h6>
+    </div>
+    <div class="card-body">
+        @*<div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-success btn-sm" type="button">@Html.ActionLink("Nuevo Empleado", "Create")</button>
+            </div>
+        </div>*@
+        <div class="row m-1">
+            <a href="@Url.Action("Create","Empleadoes" )" class="btn btn-success " style="float:left"><i class="fa fa-book-open"></i> Nuevo Empleado </a>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+
+                    <table class="table table-bordered" id="datTable" style="width:100%" cellspacing="0">
+                        <thead>
+                            <tr>
+
+                                <th>
+                                    <h6>Codigo</h6>
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nombres)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Apellidos)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Cedula)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Telefono)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Direccion)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Correo)
+                                </th>
+                                <th>
+                                    Accion
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tfoot>
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cod_Emp)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nombres)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Apellidos)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cedula)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Telefono)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Direccion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Correo)
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("Edit","Empleadoes",new { id = item.Id })" class="btn btn-warning"><i class="fa fa-pencil-alt"></i></a>
+                                        <a href="@Url.Action("Delete","Empleadoes",new { id = item.Id })" class="btn btn-danger"><i class="fa fa-trash-alt"></i> </a>
+                                        @*<button class="btn btn-warning"><i class="fa fa-pencil"></i>@Html.ActionLink("Editar", "Edit", new { id = item.Id })</button>
+        <button class="btn btn-danger"><i class=""></i>@Html.ActionLink("Elimina", "Delete", new { id = item.Id })</button>*@
+
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+
+                        </tfoot>
+
+                    </table>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

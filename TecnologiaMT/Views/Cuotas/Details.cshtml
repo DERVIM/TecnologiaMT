@@ -1,0 +1,58 @@
+﻿@model TecnologiaMT.Models.Cuota
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cuota</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cod_Cuota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cod_Cuota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalAbonado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalAbonado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoPago.Cod_TipoP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoPago.Cod_TipoP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Renta.Cod_Renta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Renta.Cod_Renta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

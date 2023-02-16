@@ -1,0 +1,85 @@
+﻿@model IEnumerable<TecnologiaMT.Models.venta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="card-header py-3 bg-primary">
+    <h6 class="m-0 font-weight-bold text-white">Lista de Ventas</h6>
+</div>
+<h2>@ViewBag.mensaje</h2>
+<div class="row m-1">
+    <a href="@Url.Action("Create","ventas" )" class="btn btn-success " style="float:left"><i class="fa fa-book-open"></i> Nueva venta </a>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cod_Venta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado.Cod_Emp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoFactura.Cod_TipoFac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoFactura.Cod_EstadoFac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente.Cod_Cli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Retencion.Cod_Reten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoPago.Cod_TipoP)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cod_Venta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empleado.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoFactura.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoFactura.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Retencion.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoPago.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

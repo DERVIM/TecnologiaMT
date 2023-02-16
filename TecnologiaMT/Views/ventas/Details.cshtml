@@ -1,0 +1,90 @@
+﻿@model TecnologiaMT.Models.venta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>venta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cod_Venta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cod_Venta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.Cod_Emp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Cod_Emp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoFactura.Cod_TipoFac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoFactura.Cod_TipoFac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoFactura.Cod_EstadoFac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoFactura.Cod_EstadoFac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Cod_Cli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Cod_Cli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Retencion.Cod_Reten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Retencion.Cod_Reten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoPago.Cod_TipoP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoPago.Cod_TipoP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

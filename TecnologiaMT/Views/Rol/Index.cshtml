@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+
+
+@{ ViewBag.Title = "Index"; }
+
+
+<div class="section-padding">
+    <div class="col-11 mx-auto ">
+        <div class="card">
+            <div class="card-header py-3 bg-primary">
+                <h6 class="m-0 font-weight-bold text-white">Roles</h6>
+            </div>
+            <br />
+            <div class="card-header bg-gradient-light">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>Nombre de los Roles</th>
+                        <th>Roles por usuarios</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+        <tr>
+            <th>@item.Name</th>
+            <th>@item.Users.Count</th>
+
+
+
+        </tr>
+}
+                </table>
+
+
+                <div class="form-group m-4">
+                    <div class=" btn-sm float-left">
+                        <a href=" @Url.Action("Index", "Usuarios")" class="btn btn-success"><i class="fa fa-pencil-alt"></i> Usuarios</a>
+                    </div>
+
+
+                </div>
+
+                <br />
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+

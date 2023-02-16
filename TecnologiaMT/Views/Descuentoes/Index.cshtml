@@ -1,0 +1,140 @@
+﻿@model IEnumerable<TecnologiaMT.Models.Descuento>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-primary">
+        <h6 class="m-0 font-weight-bold text-white">Lista de Descuentos</h6>
+    </div>
+    <div class="card-body">
+        @*<div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-success btn-sm" type="button">@Html.ActionLink("Nuevo Descuento", "Create")</button>
+            </div>
+        </div>*@
+        <div class="row m-1">
+            <a href="@Url.Action("Create","Descuentoes" )" class="btn btn-success " style="float:left"><i class="fa fa-book-open"></i> Nuevo Descuento </a>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+
+                    <table class="table table-bordered" id="datTable" style="width:100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h6>Codigo</h6>
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nombre)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Porcentaje)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FechaInicio)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FechaFin)
+                                </th>
+                                <th>Accion</th>
+                            </tr>
+
+                        </thead>
+                        <tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cod_Desc)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nombre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Porcentaje)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FechaInicio)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FechaFin)
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("Edit","Descuentoes",new { id = item.Id })" class="btn btn-warning"><i class="fa fa-pencil-alt"></i></a>
+                                        <a href="@Url.Action("Delete","Descuentoes",new { id = item.Id })" class="btn btn-danger"><i class="fa fa-trash-alt"></i> </a>
+
+                                        @*<button class="btn btn-warning"><i class="fa fa-pencil"></i>@Html.ActionLink("Editar", "Edit", new { id = item.Id })</button>
+                                        <button class="btn btn-danger"><i class=""></i>@Html.ActionLink("Elimina", "Delete", new { id = item.Id })</button>*@
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        </tfoot>
+
+                    </table>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cod_Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Porcentaje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaFin)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cod_Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Porcentaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFin)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+
+    </table>*@

@@ -1,0 +1,37 @@
+﻿@model TecnologiaMT.Models.Producto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div class="col-auto mx-auto pt-5">
+    <div class="card ">
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <h2 class="col-12">Eliminar</h2>
+                    <hr />
+
+                    <h3 class="col-12">Esta seguro de eliminar el producto @Html.DisplayFor(model => model.Nombre)? </h3>
+
+
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="col-12 form-actions">
+                            <div class="btn-sm float-right">
+                                <input type="submit" value="Eliminar" class="btn btn-danger" />
+                                <button class="btn btn-warning"> @Html.ActionLink("Cancelar", "Index")</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
